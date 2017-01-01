@@ -1,0 +1,32 @@
+{
+	"name":		"nodejs-onkyoserial",
+	"version":	"0.0.1",
+	"description":	"Onkyo Receiver RS232 Serial Protocol",
+	"main":		"onkyo.js",
+
+	"dependencies": {
+		"serialport": "^4.0.7"
+	},
+	"devDependencies": {},
+	"repository": {
+		"type":	"git",
+		"url":	"git+https://github.com/rayzorben/nodejs-onkyoserial.git"
+	},
+
+	"keywords": [
+		"onkyo",
+		"serial",
+		"ipsc",
+		"eipsc",
+		"rs232",
+		"protocol",
+		"automation"
+	],
+	"author": "rayzorben",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/rayzorben/nodejs-onkyoserial/issues"
+	},
+	"homepage", "https://github.com/rayzorben/nodejs-onkyoserial#readme"
+}
+
