@@ -1,0 +1,12 @@
+[Service]
+ExecStart=/usr/bin/node /opt/onkyo/onkyo.js
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=onkyo
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/opt/onkyo
+
+[Install]
+WantedBy=multi-user.target

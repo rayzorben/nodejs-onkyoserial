@@ -288,6 +288,6 @@ setInterval(query_status, config.refresh_frequency);
 //
 // KEYPRESS TO QUIT
 //
-process.stdin.setRawMode(true);
-process.stdin.resume();
-process.stdin.on('data', process.exit.bind(process, 0));
+//process.stdin.setRawMode(true);
+//process.stdin.resume();
+//process.stdin.on('data', process.exit.bind(process, 0));
