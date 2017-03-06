@@ -1,0 +1,5 @@
+{
+	"serialport": "/dev/ttyUSB0",
+	"refresh_frequency": 5000,
+	"rest_port": 3000
+}

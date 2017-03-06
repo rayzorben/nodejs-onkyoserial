@@ -196,38 +196,39 @@ function query_status() {
 
 function process_message(message) {
 	format_str = /\!1([A-Z]{3})(.{2})?/g;
-	match = format_str.exec(message);
-	cmd = match[1];
-	value = match[2];
+	if (match = format_str.exec(message)) {
+        cmd = match[1];
+        value = match[2];
 
-	switch (cmd) {
-		case CMD_POWER:
-			onkyo_status.master.power = (value == '01');
-			emitter.emit(CMD_POWER);
-			break;
-		case CMD_MASTERVOL:
-			onkyo_status.master.volume = parseInt('0x' + value);
-			emitter.emit(CMD_MASTERVOL);
-			break;
-		case CMD_INPUT:
-			onkyo_status.master.source = sources[value];
-			emitter.emit(CMD_INPUT);
-			break;
-		case CMD_Z2_POWER:
-			onkyo_status.zone2.power = (value == '01');
-			emitter.emit(CMD_Z2_POWER);
-			break;
-		case CMD_Z2_VOLUME:
-			onkyo_status.zone2.volume = parseInt('0x' + value);
-			emitter.emit(CMD_Z2_VOLUME);
-			break;
-		case CMD_Z2_INPUT:
-			onkyo_status.zone2.source = sources[value];
-			emitter.emit(CMD_Z2_INPUT);
-			break;
-		default:
-			break;
-	}
+        switch (cmd) {
+            case CMD_POWER:
+                onkyo_status.master.power = (value == '01');
+                emitter.emit(CMD_POWER);
+                break;
+            case CMD_MASTERVOL:
+                onkyo_status.master.volume = parseInt('0x' + value);
+                emitter.emit(CMD_MASTERVOL);
+                break;
+            case CMD_INPUT:
+                onkyo_status.master.source = sources[value];
+                emitter.emit(CMD_INPUT);
+                break;
+            case CMD_Z2_POWER:
+                onkyo_status.zone2.power = (value == '01');
+                emitter.emit(CMD_Z2_POWER);
+                break;
+            case CMD_Z2_VOLUME:
+                onkyo_status.zone2.volume = parseInt('0x' + value);
+                emitter.emit(CMD_Z2_VOLUME);
+                break;
+            case CMD_Z2_INPUT:
+                onkyo_status.zone2.source = sources[value];
+                emitter.emit(CMD_Z2_INPUT);
+                break;
+            default:
+                break;
+        }
+    }
 };
 
 function print_status() {
